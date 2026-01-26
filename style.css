@@ -1,0 +1,256 @@
+/* * Css Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+/* Root:
+ Proje içerisindeki yönetimi kolaylaştırmak için root yani kök dizinde birden fazla yerde kullanılacak still özelliklerini yönetmek için kullanılır.
+
+ Root içerisinde bir değer tanımlarken --değerAdı:değerinKarşılığı şeklinde tanımlarız.Kullanılacak yerde ise var(--değerAdı) şeklinde tanımlanan değer çağırılır.
+*/
+:root {
+  --black-color: #000;
+  --white-color: #ffffff;
+  --seperation-color: #363636;
+  --red-color: red;
+  --btn-color: #151411;
+}
+
+body {
+  background-color: var(--black-color);
+  color: var(--white-color);
+}
+
+/* * Global Styles */
+.btn {
+  padding: 3px 8px;
+  background: none;
+  border: 1px solid var(--white-color);
+  color: var(--white-color);
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: all 0.4s;
+}
+.btn:hover {
+  background-color: var(--red-color);
+}
+
+.btn-red {
+  background-color: var(--red-color);
+}
+.btn-red:hover {
+  background: none;
+}
+
+.seperation {
+  border: 3px solid rgb(54, 54, 54);
+}
+
+/* * Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 60%;
+  height: 100px;
+  margin: auto;
+}
+.header .logo {
+  width: 130px;
+  z-index: 1;
+}
+
+.header .buttons {
+  z-index: 1;
+}
+
+/* * Hero */
+.hero {
+  height: 644px;
+  background-image: url("./assets/banner.jpg");
+  background-position: center center;
+  background-size: cover;
+  position: relative;
+}
+
+.box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 644px;
+}
+
+/* * Hero Content */
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  height: calc(100% - 100px);
+  text-align: center;
+  padding: 10px;
+}
+.hero-content h1 {
+  font-size: 48px;
+  z-index: 1;
+}
+
+.hero-content p {
+  font-size: 24px;
+  z-index: 1;
+}
+.hero-content form {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  z-index: 1;
+}
+.hero-content form input {
+  padding: 7px 101px 8px 14px;
+  font-size: 12px;
+  border-radius: 4px;
+  border: 1px solid rgb(197, 197, 197);
+  background-color: var(--btn-color);
+}
+
+.hero-content form button {
+  padding: 8px 24px;
+  font-size: 18px;
+}
+
+.info-area {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  justify-content: center;
+  max-width: 70vw;
+  margin: auto;
+}
+.info-area .text h1 {
+  font-size: 48px;
+}
+.info-area .text p {
+  font-size: 24px;
+  margin-top: 10px;
+}
+
+.info-area .image {
+  position: relative;
+}
+
+.info-area .image img {
+  position: relative;
+  width: 555px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.info-area .image video {
+  position: absolute;
+  top: 70px;
+  right: 10px;
+}
+
+.reverse {
+  flex-direction: row-reverse;
+}
+
+/* * Questions */
+.questions {
+  padding: 35px;
+  text-align: center;
+}
+.questions h2 {
+  font-size: 50px;
+}
+
+.questions .boxs {
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.questions .boxs .question-box {
+  background-color: #272727;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px;
+  cursor: pointer;
+  width: 100%;
+  max-width: 60vw;
+  margin: auto;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+.questions .boxs .question-box:hover {
+  background-color: rgb(23, 23, 23);
+}
+.questions .boxs .question-box h3 {
+  font-size: 24px;
+}
+
+.questions .boxs .question-box span {
+  font-size: 25px;
+}
+
+/* * Footer */
+.footer {
+  padding: 34px;
+  max-width: 60vw;
+  margin: auto;
+}
+.footer .footer-title {
+  font-size: 25px;
+  margin-bottom: 50px;
+}
+.footer .footer-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.footer .footer-wrapper .footer-box {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.footer .footer-wrapper .footer-box a {
+  color: white;
+  font-size: 18px;
+  text-decoration: underline;
+}
+/* * Responsive Design */
+
+@media (max-width: 1000px) {
+  .info-area {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 0;
+  }
+  .reverse {
+    flex-direction: column-reverse;
+  }
+}
+
+@media (max-width: 600px) {
+  .info-area .image img {
+    width: 500px;
+  }
+  .info-area .image video {
+    width: 85%;
+  }
+  .questions .boxs .question-box h3 {
+    font-size: 20px;
+  }
+}
