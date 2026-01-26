@@ -18,15 +18,10 @@ https://serhatf.github.io/Netflix-Clone-14H/
 
 ---
 
-## 📸 Screenshots
+## 📸 Screenshot
 
 ### 💻 Desktop View
 ![Desktop Screenshot](/assets/web.png)
-
-### 📱 Mobile View
-![Mobile Screenshot](/assets/mobile2.png)
-
----
 
 ## 🛠️ Built With
 
